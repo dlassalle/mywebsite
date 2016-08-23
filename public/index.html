@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>David Lassalle</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body class="container thing" ng-app="webApp" ng-controller="webCtrl">
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <a class="navbar-brand">David Lassalle</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active" id="homeBtn">
+                    <a class="nav-link" href="#" ng-click="changePage(0)">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" id="employmentBtn">
+                    <a class="nav-link" href="#" ng-click="changePage(1)">Education</a>
+                </li>
+                <li class="nav-item" id="skillsBtn">
+                    <a class="nav-link" href="#" ng-click="changePage(2)">Skills</a>
+                </li>
+                <li class="nav-item" id="projectsBtn">
+                    <a class="nav-link" href="#" ng-click="changePage(3)">Experience</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a target="_blank" href="https://www.linkedin.com/in/david-lassalle-68778a11a"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+              </li>
+              <li>
+                  <a target="_blank" href="https://github.com/dlassalle"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+              </li>
+              <li>
+                  <a href="Lassalle_Resume_8.16.pdf" download><i class="fa fa-download fa-fw"></i><span class="network-name">Resume</span> </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <div ng-if="currentIndex === 0">
+        <div class='row'>
+          <div class="col-sm-4 col-sm-offset-4">
+            <div class="w3-content" style="max-width:800px;height:480px">
+              <img class="mySlides img-responsive" src="me_pics/1.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/2.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/3.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/4.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/5.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/6.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/7.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/8.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/9.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/10.jpg" style="max-width:640px;max-height:480px">
+              <img class="mySlides img-responsive" src="me_pics/11.jpg" style="max-width:640px;max-height:480px">
+            </div>
+            <div class="w3-center">
+              <div class="w3-section">
+                <button class="w3-btn" onclick="plusDivs(-1)">❮ Prev</button>
+                <button class="w3-btn" onclick="plusDivs(1)">Next ❯</button>
+              </div>
+            <!--  <button class="w3-btn demo" onclick="currentDiv(1)">1</button>
+              <button class="w3-btn demo" onclick="currentDiv(2)">2</button>
+              <button class="w3-btn demo" onclick="currentDiv(3)">3</button>
+              <button class="w3-btn demo" onclick="currentDiv(4)">4</button>
+              <button class="w3-btn demo" onclick="currentDiv(5)">5</button>
+              <button class="w3-btn demo" onclick="currentDiv(6)">6</button>
+              <button class="w3-btn demo" onclick="currentDiv(7)">7</button>
+              <button class="w3-btn demo" onclick="currentDiv(8)">8</button>
+              <button class="w3-btn demo" onclick="currentDiv(9)">9</button>
+              <button class="w3-btn demo" onclick="currentDiv(10)">10</button>
+              <button class="w3-btn demo" onclick="currentDiv(11)">11</button> -->
+            </div>
+          </div>
+        </div>
+        <div class="row text-center" style="margin-top:5%">
+            <p class="lead">Email me at <a href="mailto:dlassalle@umass.edu" class='mail'>dlassalle@umass.edu</a>
+            </p>
+            <p class="lead">
+                Senior at the University of Massachusetts - Amherst studying computer systems engineering and pursuing a minor in computer science.
+                Here you will find information about my experience and skillset as well as information
+                on how to contact me. Feel free to reach out to me for employment opportunities or questions about my work!
+            </p>
+        </div>
+    </div>
+    <div ng-if="currentIndex === 1">
+        <div class="row">
+            <img src="img/ahmerst.jpg" class="img-responsive" alt="UMass Campus" />
+        </div>
+        <div class="row">
+            <div class="jumbotron text-center no-bg">
+                <h1>University of Massachusetts - Amherst</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h2>Fall 2013 - Present (Expected Graduation Spring 2017)</h2>
+            </div>
+        </div>
+        <div class="row" style="margin-top:5%">
+          <h1> Current GPA: 3.84 </h1>
+          <h2> Relevant Completed and Current Courses </h2>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Course Title</th>
+                <th>Semester Taken</th>
+                <th>Topics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Intro. to Electrical and Computer Engin.</td>
+                <td>Fall 2013</td>
+                <td>Intro to CMOS design, covered from logic gates to RAM</td>
+              </tr>
+              <tr>
+                <td>Engineering Career Seminar</td>
+                <td>Fall 2013</td>
+                <td>Basics of career networking and career fair preparation</td>
+              </tr>
+              <tr>
+                <td>Calculus II</td>
+                <td>Fall 2013</td>
+                <td>Derivitices, integration, sequences, series, and power series. Taylor and MacLaurin series.</td>
+              </tr>
+              <tr>
+                <td>General Physics I</td>
+                <td>Fall 2013</td>
+                <td>Analysis of classical motion, including kinematics, force, energy, and linear momentum.</td>
+              </tr>
+              <tr>
+                <td>Intro Problem Solving W/Comp</td>
+                <td>Spring 2014</td>
+                <td>Programming course using Java covering data types to data abstraction to inheritance.</td>
+              </tr>
+              <tr>
+                <td>ST-ECE Systems Appreciation</td>
+                <td>Spring 2014</td>
+                <td>Seminar for understanding how modern systems operate</td>
+              </tr>
+              <tr>
+                <td>Intro Linear Algebra</td>
+                <td>Spring 2014</td>
+                <td>Linear algebra course covering up to eigenvalues and orthogonalization</td>
+              </tr>
+              <tr>
+                <td>General Physics II</td>
+                <td>Spring 2014</td>
+                <td>Heat, kinetic theory, first and second laws of thermodynamics. Comprehensive study of electricity and magnetism from Coulomb's law to AmpEre's law. Applications to basic circuits and ending with AC circuits.</td>
+              </tr>
+              <tr>
+                <td>Circuit Analysis I </td>
+                <td>Fall 2014</td>
+                <td>Mathematical models for analog circuit elements. Basic circuit laws and network theorems applied to dc, transient, and steady-state response of first- and second-order circuits. Modeling circuit responses using differential equations and the Laplace transform. Solving RLC networks in both the time and frequency domains. Computer projects and circuit simulations using MATLAB, Excel, and PSpice.</td>
+              </tr>
+              <tr>
+                <td>Data Structures &amp Algorithms </td>
+                <td>Fall 2014</td>
+                <td>Data structures course using the Java programming language. Basic mathematical, logical, and programming concepts relevant to description and manipulation of information structures such as arrays, lists, trees, graphs, and files; the underlying principles of algorithm design and analysis applied to sorting and searching problems.</td>
+              </tr>
+              <tr>
+                <td>Multivariate Calculus</td>
+                <td>Fall 2014</td>
+                <td>Techniques of calculus in two and three dimensions. Vectors, partial derivatives, multiple integrals, line integrals</td>
+              </tr>
+              <tr>
+                <td>Ordinary Differential Equation</td>
+                <td>Fall 2014</td>
+                <td>Ordinary differential equations.First and second order linear differential equations, systems of linear differential equations, Laplace transform, numerical methods, applications. </td>
+              </tr>
+              <tr>
+                <td>Intro. to Computation</td>
+                <td>Spring 2015</td>
+                <td>Discrete mathematics with logic, elementary number theory, proof by induction, recursion on trees, search algorithms, finite state machines, and a bit of computability.</td>
+              </tr>
+              <tr>
+                <td>Circuit Analysis II</td>
+                <td>Spring 2015</td>
+                <td>Analysis techniques for ac circuits, frequency response, resonance, Bode plots, phasor representation of sinusoidal steady-state systems, complex frequency domain, transfer functions. MOSFETs as amplifiers; operational amplifiers. Transformers, two-port networks, Fourier series. Lab includes circuit hardware and PSPICE simulation experiments.</td>
+              </tr>
+              <tr>
+                <td>Hardware Organization &amp Design </td>
+                <td>Spring 2015</td>
+                <td>Computer abstractions and technology, performance evaluation, instruction set architectures, computer arithmetic, pipelining, memory systems, and interfacing. Laboratory assignments will include the use of hardware description languages, machine languages and assembly languages.</td>
+              </tr>
+              <tr>
+                <td>Signals and Systems</td>
+                <td>Fall 2015</td>
+                <td>Basic theory behind a further study of communication theory and systems, control theory and systems, signal processing, microwave and radar systems, networking and almost all disciplines of electrical and computer systems engineering.</td>
+              </tr>
+              <tr>
+                <td>Electronics I</td>
+                <td>Fall 2015</td>
+                <td>Use of nonlinear devices such as diodes, field effect transistors (FETs), and bipolar junction transistors (BJTs) in the design of simple analog and digital circuits. Design projects make use of PSPICE.</td>
+              </tr>
+              <tr>
+                <td>Computer Syst Lab I </td>
+                <td>Fall 2015</td>
+                <td>Design and analysis of digital computer (sub)systems, including sequential controllers, asynchronous system interfacing, bus arbitration, static and dynamic memory design, and microprogrammed microprocessor design. Use of hardware description languages and programmable logic. Breadboarding and use of diagnostic equipment.</td>
+              </tr>
+              <tr>
+                <td>Software Intensive Engineering</td>
+                <td>Fall 2015</td>
+                <td>Theoretical and practical foundations for engineering the production of contemporary and future software intensive systems.  Advanced engineering problem solving concepts and skills enabled by means of state of the art modeling and testing tools.  Provides the basis for the analysis and co-design of complex hardware and software systems.</td>
+              </tr>
+              <tr>
+                <td>ECE Junior Seminar</td>
+                <td>Spring 2016</td>
+                <td>Overview of the electrical and computer engineering field, including introduction to various subdisciplines and the corresponding upper-level ECE courses.</td>
+              </tr>
+              <tr>
+                <td>Intro. Probability &amp Random Proccesses </td>
+                <td>Spring 2016</td>
+                <td>Probability space, conditional probability, Bayes theorem. Combinatorial analysis. Random variables (r.v.'s), distribution and density functions. Expected value, moments, characteristic function. Function of r.v.'s, Multiple r.v.'s, conditional distributions, independent r.v.'s. Multivariate Gaussian r.v.'s. Parameter estimation, confidence intervals, hypothesis testing. Introduction to random processes: mean, autocorrelation, power spectral density.</td>
+              </tr>
+              <tr>
+                <td>Computer Syst Lab II</td>
+                <td>Spring 2016</td>
+                <td>Advanced computer systems engineering. CISC and RISC microprocessors, microcontrollers and their role in embedded systems. Integration of hardware and software, assembly language, memory systems, programmable logic, and I/O systems. Design methodologies. Manufacturing issues. Advanced diagnostic techniques. Project management.</td>
+              </tr>
+              <tr>
+                <td>Computer Networks &amp Internet </td>
+                <td>Spring 2016</td>
+                <td>Explores the principles of computer networking and how the theoretical principles are implemented in practice.  Introduction to concepts, principles, and practice of computer communication networks and the Internet with examples from existing architectures, protocols and standards.  Emphasis on physical layer communication, data link layer protocols, routing protocols, transport layer protocols, application layer programming, network management, network security and wireless networks.</td>
+              </tr>
+              <tr>
+                <td>Senior Design Project I</td>
+                <td>Fall 2016</td>
+                <td>The course requires students to work in small design teams to solve a significant engineering problem. Students develop, design, and implement a solution to the engineering problem in conjunction with a faculty advisor. The course reinforces principles of the engineering design process and serves as a capstone for electrical and computer engineering knowledge obtained in the ECE curriculum. The consideration of the ethical and social implications of technology and the basic concepts of business are also aspects of the course. Each student design team is expected to present information related to their project in both written and oral formats. Preliminary paper design is followed by implementation in the lab using digital and analog hardware design techniques and through software engineering. It is expected that a complete or partially working system will be demonstrated at the end of the course.</td>
+              </tr>
+              <tr>
+                <td>Trustworthy Computing</td>
+                <td>Fall 2016</td>
+                <td>Introduces the fundamentals of network security as well as provides a practical survey of network security applications and standards as implemented on the Internet and for corporate networks.</td>
+              </tr>
+              <tr>
+                <td>Feedback Control Systems</td>
+                <td>Fall 2016</td>
+                <td>With lab. Time domain and frequency domain analysis and synthesis techniques for linear continuous-time feedback control systems. Topics include benefits and costs of feedback, modeling of dynamic systems,steady-state and transient performance, stability, PID control, root locus, frequency response, Nyquist stability cri-terion, and introduction to loop-shaping.</td>
+              </tr>
+              <tr>
+                <td>Image Processing</td>
+                <td>Fall 2016</td>
+                <td>2D and 3D image acquisition and display, color representations, image sampling, point operations, linear image filtering and correlation, image transforms, image enhancement, image restoration and denoising, and image analysis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <div ng-if="currentIndex === 2">
+        <div class="row">
+            <div class="jumbotron text-center no-bg">
+                <h1>Skills</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h2>Programming Languages</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Python, C++, Java, C, Bash, Ansible, HTML/CSS, Javascript, MATLAB
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center" style="margin-top: 5%">
+                <h2>Operating Systems</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    OS X, Windows, Linux
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center" style="margin-top: 5%">
+                <h2>Machine-Level Languages</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    MIPS, Verilog
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center" style="margin-top: 5%">
+                <h2>Other Skills</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Solidworks CAD, PSpice, Arduino, Hardware Debugging(Logic Analyzers, Oscilloscopes, etc.)
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div ng-if="currentIndex === 3">
+        <div class="row">
+            <div class="jumbotron text-center no-bg">
+                <h2>Work</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Software Engineering Intern
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="img/viasat.png" class="img-responsive" alt="viasat" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    During the summer of 2016 I worked at ViaSat Inc. Where two other interns and I worked on BaaS (Builds as a Service).
+                    We used Python, Bash, Ansible, Docker, and Openstack to create a CLI and API that developers could use to quickly deploy Jenkins CI servers to the cloud.
+                    The service allowed developers to store configuration in version control and migrate non-BaaS servers to our service. All of this was done with an Agile Scrum developement process
+                    and all of our work had documentation written by us to allow users to continue our work when we left.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Undergraduate Student Researcher
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="img/Memristor.jpg" class="img-responsive" alt="Memristor Image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    During the Summer of 2015, I participated in an REU (Research Experience for Undergraduates) where I worked under the guidance of Professor Qiangfei Xia and the
+                    <a href='http://nano.ecs.umass.edu/group.html' target="_blank" class='mail'> Nanodevices and Integrated Systems Laboratory. </a> My Research consited of creating MATLAB scripts
+                    to assist in the research of a graduate student attempting to show the possibilities of pattern recognition in memristor meshes. I presented my work to the group at the
+                    end of the summer.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="jumbotron text-center no-bg">
+                <h2>Projects</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Networked Camera
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Spring 2016
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UphHZDdWWbI" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                  Two classmates and I worked with Altera 2 developement boards to simulate a remote camera. We were tasked with
+                  linking the two boards through ethernet and sending instructions from a one to another using software-defined network layers that we created in C++ and Verilog.
+                  A 'master' board would sent commands to a 'slave' board to take an image, manipulate it in one of several ways, then compress and send the image back to the master.
+                  We designed the entirety of the system and the TCP protocol used to transmit and achknowledge the packets of data that the slave and master sent.
+                  We were judged by the effectiveness of our compression and the robustness of our system.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    General MIDI Explorer
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2015
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/midi.gif" class="img-responsive" alt="Midi image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                  Our Computer Systems Lab was split into random groups of three with the task fo creating
+                  a general purpose MIDI explorer with an Atmel Atmega32 AVR chip and C code. Our team met frequently and divied the hardware, software
+                  and testing requirements among our members. By using the datasheet for the chip and our compression algorithm,
+                  we were able to store up to 1KB of audio on the chip's memory and play back the original recording. For extra credit, we added a photodiode that changed the
+                  way that the audio was played back depending on the light hitting it. The project involved debugging the code using gcc debugger, the hardware using a multimeter, and
+                  the signals using a logic analyzer.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    UNIX Shell Emulator
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2015
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/shell.jpg" class="img-responsive" alt="Shell Image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    Worked as a pair to create a UNIX shell in C++. Used fork() and exec() functions to execute
+                    the desired commands. Our end result was able to execute all UNIX commands in /bin, built-in commands (cd, jobs, and exit), I/O redirection,
+                    pipelining, and background processes in single or batch modes. We also wrote documentation to describe
+                    the functionality of our shell.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Instant Messenger
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2015
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/message.png" class="img-responsive" alt="Messenger Image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    Worked indepenently in C++ on a TCP socket-based instant messenger. I wrote a multithreaded server
+                    that listened for clients and created a new thread to handle their requests. An arbitrary number of clients could connect
+                    and the clients could send messages to eachother and query the server to see who else is logged in. I finished the assignment
+                    by creating documentation to provide ease-of-use for using the messenger.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    MIPS Processor Simulator
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2015
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/mips.gif" class="img-responsive" alt="MIPS image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    I led a team of four to create a simulation of a pipelined MIPS processor in C. The design of the code
+                    we wrote was based on the physical layout of a real processor and we used a collaborative coding environment to distribute
+                    the workload among the group. Together we created a program that maintained the correct register data at each stage
+                    of the instruction set. The simulator could be run in single step and batch modes and had the ability to handle hazards
+                    presented to it.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    ASCII Text Encryptor
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2015
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/encryption.jpg" class="img-responsive" alt="Encryption image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    Worked in a team to create a C program to encrypt an ASCII text file based on a private seed key.
+                    Encryption algorithm was created to minimize repetition of encryption pattern to further prevent code cracking.
+                    Encrypted text was able to be fully decrypted using same private seed key.
+                    Algorithm passed test for encryption with various file sizes and different seed keys.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Social Media Searcher
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Fall 2014
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/graph.png" class="img-responsive" alt="Graph Image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    Utilized a large data set of pairs of names to link 'friends' in a network stored as a graph in Java. The goal of
+                    the project was to be able to perform a series of queries on the graph: to provide a suggestion of new friends to a given
+                    user based on the number of mutual friends they have and to give a path of friendships as 'degrees of separation' between any two
+                    nodes in the graph. I also created a small test script to do those operations on the graph and compare them directly to the data set.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h4 style="margin-top: 2%">
+                    Bose Speaker Design
+                </h4>
+                <h5 style="margin-top: 2%">
+                    Spring 2013
+                </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10%">
+            <div class="col-sm-6">
+                <img src="img/bose.jpg" class="img-responsive" alt="Bose Image" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="lead">
+                    Led a group of students in designing and proposing a speaker for Bose in Solidworks CAD. Bose 3D printed select designs
+                    and we soldered and assembled the amplifiers and speaker drivers into the final design and presented our work to Bose engineers at their headquarters.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="text-center">
+            <p>Copyright &copy; David Lassalle 2016</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/webApp.js"></script>
+    <script>
+      // Slideshows
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+           dots[i].className = dots[i].className.replace(" w3-red", "");
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+    </script>
+</body>
+
+</html>
